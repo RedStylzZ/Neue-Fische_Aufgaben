@@ -9,8 +9,7 @@ public class Intermediate {
     }
 
     public static void printNumbers() {
-        String prefix = "";
-        StringBuilder test = new StringBuilder();
+        String prefix;
         for (int x = 1; x <= 100; x++) {
             prefix = "";
             if(x % 3 == 0) {
@@ -24,7 +23,7 @@ public class Intermediate {
     }
 
     public static void inputNames() {
-        String name = "";
+        String name;
         String[] names = new String[1];
         Scanner scanner = new Scanner(System.in);
         int count = 0;
