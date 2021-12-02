@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Intermediate {
@@ -30,9 +31,7 @@ public class Intermediate {
 
         while (true){
             if (count>=names.length){
-                String [] tmp = new String [names.length+1];
-                System.arraycopy(names, 0, tmp, 0, names.length);
-                names = tmp;
+                names = Arrays.copyOf(names, names.length+1);
             }
 
             System.out.print("Name: ");
@@ -47,6 +46,7 @@ public class Intermediate {
             for (String x : names) {
                 System.out.println(x);
             }
+
         }
 
     }
