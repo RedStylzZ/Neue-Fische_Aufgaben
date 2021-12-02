@@ -30,5 +30,6 @@ class ExpertTest {
     @Test
     void checkDecimalToRoman() {
         assertEquals("XII", Expert.decimalToRoman((12)));
+        assertEquals("XXXIV", Expert.decimalToRoman((34)));
     }
 }

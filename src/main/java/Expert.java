@@ -31,90 +31,100 @@ public class Expert {
 
         return checksum;
     }
-
+    
     public static String decimalToRoman(int num) {
         if (num < 1 || num > 3999)
-            return "Invalid Roman Number Value";
+            return "";
 
         StringBuilder roman = new StringBuilder();
 
-        while (num >= 1000) {
-            roman.append("M");
+        if (num >= 1000) {
             num -= 1000;
+            return roman.append("M").append(decimalToRoman(num)).toString();
         }
-        while (num >= 900) {
-            roman.append("CM");
+        if (num >= 900) {
             num -= 900;
+            return roman.append("CM").append(decimalToRoman(num)).toString();
         }
-        while (num >= 500) {
-            roman.append("D");
+        if (num >= 500) {
             num -= 500;
+            return roman.append("D").append(decimalToRoman(num)).toString();
         }
-        while (num >= 400) {
-            roman.append("CD");
+        if (num >= 400) {
             num -= 400;
+            return roman.append("CD").append(decimalToRoman(num)).toString();
         }
-        while (num >= 100) {
-            roman.append("C");
+        if (num >= 100) {
             num -= 100;
+            return roman.append("C").append(decimalToRoman(num)).toString();
         }
-        while (num >= 90) {
-            roman.append("XC");
+        if (num >= 90) {
             num -= 90;
+            return roman.append("XC").append(decimalToRoman(num)).toString();
         }
-        while (num >= 50) {
-            roman.append("L");
+        if (num >= 50) {
             num -= 50;
+            return roman.append("L").append(decimalToRoman(num)).toString();
         }
-        while (num >= 40) {
-            roman.append("XL");
+        if (num >= 40) {
             num -= 40;
+            return roman.append("XL").append(decimalToRoman(num)).toString();
         }
-        while (num >= 10) {
-            roman.append("X");
+        if (num >= 10) {
             num -= 10;
+            return roman.append("X").append(decimalToRoman(num)).toString();
         }
-        while (num >= 9) {
-            roman.append("IX");
+        if (num >= 9) {
             num -= 9;
+            return roman.append("IX").append(decimalToRoman(num)).toString();
         }
-        while (num >= 5) {
-            roman.append("V");
+        if (num >= 5) {
+            roman.append("D");
             num -= 5;
+            return roman.append("D").append(decimalToRoman(num)).toString();
         }
-        while (num >= 4) {
-            roman.append("IV");
+        if (num >= 4) {
             num -= 4;
+            return roman.append("IV").append(decimalToRoman(num)).toString();
         }
-        while (num >= 1) {
-            roman.append("I");
+        if (num >= 1) {
             num -= 1;
+            return roman.append("I").append(decimalToRoman(num)).toString();
         }
         return roman.toString();
     }
-
+    
     public static void main(String[] args) {
         String s = "Turtle";
         String s2 = "Turtle,Meep,Bootcamp";
         int checksum = 254;
         int[] arr = {6, 2, 8, 3, 9, 6};
+        int number = 34;
 
+        // Reverse String
         System.out.println(s);
         System.out.println(reverseString(s));
-
         System.out.println();
 
+        // Sort Array
         System.out.println(Arrays.toString(arr));
         System.out.println(Arrays.toString(sortArray(arr)));
+        System.out.println();
 
+        // Separate String at ,
         System.out.println(s2);
         System.out.println(Arrays.toString(seperateString(s2)));
+        System.out.println();
 
+        // Calculate Checksum
         System.out.println(checksum);
         System.out.println(calcChecksum(checksum));
+        System.out.println();
 
-
-
+        // Decimal to Roman
+        System.out.println(number);
+        System.out.println(decimalToRoman(number));
+        System.out.println();
 
     }
 
